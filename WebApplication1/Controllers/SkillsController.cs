@@ -36,10 +36,10 @@ namespace WebApplication1.Controllers
                 "<legend> JavaScript </legend>" +
                 "<p>" +
                 "<label>Select Level </label>" +
-                "<select id = 'js_list'>" +
-                "<option name='javascript' value='foundational'>Foundational</option>" +
-                "<option name='javascript' value='intermediate'>Intermediate</option>" +
-                "<option name='javascript' value='advanced'>Advanced</option>" +
+                "<select name = 'javascript'>" +
+                "<option select name='javascript' value='foundational'>Foundational</option>" +
+                "<option select name='javascript' value='intermediate'>Intermediate</option>" +
+                "<option select name='javascript' value='advanced'>Advanced</option>" +
                 "</select>" +
                 "</p>" +
                 "</fieldset>" +
@@ -48,7 +48,7 @@ namespace WebApplication1.Controllers
                 "<legend> HTML </legend>" +
                 "<p>" +
                 "<label>Select Level </label>" +
-                "<select id = 'html_list'>" +
+                "<select name = 'html'>" +
                 "<option name='html' value='foundational'>Foundational</option>" +
                 "<option name='html' value='intermediate'>Intermediate</option>" +
                 "<option name='html' value='advanced'>Advanced</option>" +
@@ -60,7 +60,7 @@ namespace WebApplication1.Controllers
                 "<legend> Angular </legend>" +
                 "<p>" +
                 "<label>Select Level </label>" +
-                "<select id = 'angular_list'>" +
+                "<select name = 'angular'>" +
                 "<option name='angular' value='foundational'>Foundational</option>" +
                 "<option name='angular' value='intermediate'>Intermediate</option>" +
                 "<option name='angular' value='advanced'>Advanced</option>" +
@@ -75,12 +75,12 @@ namespace WebApplication1.Controllers
 
         //[HttpGet("/skills/results")]\
         [HttpPost]
-        public IActionResult Results(string date)
+        public IActionResult Results(string date, string javascript ="Foundational", string html="Foundational", string angular= "Foundational")
         {
             //string html2 =
             //    "<h1>date</h1>";
 
-            return Content("this is the date: " + date);
+            return Content("<h1>DATE: " + date + " Javascript " + javascript + " HTML " + html + " Angular " + angular + "</h1>", "text/html");
         }
     }
 }
