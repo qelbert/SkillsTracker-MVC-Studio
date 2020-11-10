@@ -29,7 +29,7 @@ namespace WebApplication1.Controllers
         public IActionResult Form()
         {
             string html1 =
-                "<form method = 'post' action = '/skills/results' accept-charset = 'utf - 8'>" +
+                "<form method = 'post' action = '/skills/form' accept-charset = 'utf - 8'>" +
                 "<label><b>Date</b></label><br>" +
                 "<input type='date' name ='date' value='date'/>" +
                 "<fieldset>" +
@@ -37,9 +37,9 @@ namespace WebApplication1.Controllers
                 "<p>" +
                 "<label>Select Level </label>" +
                 "<select name = 'javascript'>" +
-                "<option select name='javascript' value='foundational'>Foundational</option>" +
-                "<option select name='javascript' value='intermediate'>Intermediate</option>" +
-                "<option select name='javascript' value='advanced'>Advanced</option>" +
+                "<option value='Foundational'>Foundational</option>" +
+                "<option value='Intermediate'>Intermediate</option>" +
+                "<option value='Advanced'>Advanced</option>" +
                 "</select>" +
                 "</p>" +
                 "</fieldset>" +
@@ -49,9 +49,9 @@ namespace WebApplication1.Controllers
                 "<p>" +
                 "<label>Select Level </label>" +
                 "<select name = 'html'>" +
-                "<option name='html' value='foundational'>Foundational</option>" +
-                "<option name='html' value='intermediate'>Intermediate</option>" +
-                "<option name='html' value='advanced'>Advanced</option>" +
+                "<option value='Foundational'>Foundational</option>" +
+                "<option value='Intermediate'>Intermediate</option>" +
+                "<option value='Advanced'>Advanced</option>" +
                 "</select>" +
                 "</p>" +
                 "</fieldset>" +
@@ -61,9 +61,9 @@ namespace WebApplication1.Controllers
                 "<p>" +
                 "<label>Select Level </label>" +
                 "<select name = 'angular'>" +
-                "<option name='angular' value='foundational'>Foundational</option>" +
-                "<option name='angular' value='intermediate'>Intermediate</option>" +
-                "<option name='angular' value='advanced'>Advanced</option>" +
+                "<option value='Foundational'>Foundational</option>" +
+                "<option value='Intermediate'>Intermediate</option>" +
+                "<option value='Advanced'>Advanced</option>" +
                 "</select>" +
                 "</p>" +
                 "</fieldset>" +
@@ -73,14 +73,10 @@ namespace WebApplication1.Controllers
             return Content(html1, "text/html");
         }
 
-        //[HttpGet("/skills/results")]\
-        [HttpPost]
+        [HttpPost("/skills/form")]
         public IActionResult Results(string date, string javascript ="Foundational", string html="Foundational", string angular= "Foundational")
         {
-            //string html2 =
-            //    "<h1>date</h1>";
-
-            return Content("<h1>DATE: " + date + " Javascript " + javascript + " HTML " + html + " Angular " + angular + "</h1>", "text/html");
+            return Content("<h1>DATE: " + date + "</h1>" + "<br><br><h2> Javascript: " + javascript + "<br>HTML: " + html + "<br>Angular: " + angular + "<h2>", "text/html");
         }
     }
 }
