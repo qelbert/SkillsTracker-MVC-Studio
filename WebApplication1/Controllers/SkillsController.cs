@@ -76,7 +76,7 @@ namespace WebApplication1.Controllers
         [HttpPost("/skills/form")]
         public IActionResult Results(string date, string javascript ="Foundational", string html="Foundational", string angular= "Foundational")
         {
-            return Content("<h1>DATE: " + date + "</h1>" + "<br><br><h2> Javascript: " + javascript + "<br>HTML: " + html + "<br>Angular: " + angular + "<h2>", "text/html");
+            return Content("<h1>DATE: " + date + "</h1>" + "<h2> <ol> <li> Javascript: " + javascript + "</li> <li>HTML: " + html + "</li><li>Angular: " + angular + "</li></ol></h2>", "text/html");
         }
     }
 }
